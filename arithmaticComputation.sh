@@ -13,14 +13,18 @@ z=`awk 'BEGIN{printf("%0.2f", '$c' + '$a' / '$b' )}'`
 q=$(( a % b + c ))
       echo "$a % $b + $c = $q "
 declare -A computation
- computation[first]=$x
- computation[second]=$y
- computation[Third]=$z
- computation[Fourth]=$q
+ computation[1]=$x
+ computation[2]=$y
+ computation[3]=$z
+ computation[4]=$q
 echo -e "values: ${computation[@]}\nkeys:${!computation[@]}"
 
 for((count=1; count <= 4; count++))
 do
-	arr[$count]=${operations[$count]}
+	arr[$count]=${computation[$count]}
 done
-echo "Array: ${arr[@]}"
+echo "Actual Array: ${arr[@]}"
+arr2=($(echo ${arr[*]} | tr " " "\n" | sort -n))
+
+echo "Sorting in Asecending Order"
+echo "Sorted Array  : ${arr2[@]}"
