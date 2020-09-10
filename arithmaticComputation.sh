@@ -7,3 +7,5 @@ x=$(( a + b *c ))
       echo "$a + $b * $c = $x"
 y=$(( a * b + c ))
       echo "$a * $b +$c = $y"
+z=`awk 'BEGIN{printf("%0.2f", '$c' + '$a' / '$b' )}'`
+      echo "$c + $a / $b = $z"
