@@ -28,3 +28,9 @@ arr2=($(echo ${arr[*]} | tr " " "\n" | sort -n))
 
 echo "Sorting in Asecending Order"
 echo "Sorted Array  : ${arr2[@]}"
+
+
+arr3=($(echo ${arr[*]} | tr " " "\n" | sort -nr))
+
+echo "Sorting in Descending Order"
+echo "Sorted Array  : ${arr3[@]}"
